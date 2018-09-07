@@ -21,7 +21,7 @@ public class Adress implements Serializable {
 
     @Column(name="STREET")
     @Basic(optional = false)
-    String Street;
+    String street;
 
     @Column(name="CITY")
     @Basic(optional = false)
@@ -44,11 +44,11 @@ public class Adress implements Serializable {
     }
 
     public String getStreet() {
-        return Street;
+        return street;
     }
 
     public void setStreet(String street) {
-        Street = street;
+        street = street;
     }
 
     public String getCity() {
