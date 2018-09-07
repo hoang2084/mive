@@ -41,8 +41,9 @@ out
 gen
 .gitignore
 .idea/
-controller/
+
 mive.iml
-pom.xml
-service/
-src/
+
+
+
+
