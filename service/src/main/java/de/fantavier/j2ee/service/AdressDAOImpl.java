@@ -9,7 +9,7 @@ public class AdressDAOImpl implements IAdressDAO {
     @Override
     public Adress saveAdress(Adress adress) {
         session.beginTransaction();
-        session.save(adress);
+        session.persist(adress);
         session.getTransaction().commit();
         return adress;
     }
