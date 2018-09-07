@@ -1,23 +1,50 @@
 package de.fantavier.j2ee.model;
 
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Entity
+@DiscriminatorValue("INTERN")
 public class InternerMitarbeiter extends Employee {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+
+    @Column(name="KENNUNG")
+    @Basic(optional = false)
+    private int kennung;
+
+    @Column(name="JOB")
+    @Basic(optional = false)
     private Job job;
+
+    @Column(name="ABTEILUNG")
+    @Basic(optional = false)
     private Abteilung abteilung;
 
-    public InternerMitarbeiter(int id, Job job, Abteilung abteilung) {
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public InternerMitarbeiter(int kennung, Job job, Abteilung abteilung) {
+        this.kennung = kennung;
         this.job = job;
         this.abteilung = abteilung;
     }
 
-    public int getId() {
-        return id;
+    public int getKennung() {
+        return kennung;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setKennung(int kennung) {
+        this.kennung = kennung;
     }
 
     public Job getJob() {

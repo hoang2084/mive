@@ -1,5 +1,11 @@
 package de.fantavier.j2ee.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name = "EMPLOYEE")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "ZUGEHÖRIGKEIT", discriminatorType = DiscriminatorType.STRING)
 public abstract class Employee {
 
     private String name;

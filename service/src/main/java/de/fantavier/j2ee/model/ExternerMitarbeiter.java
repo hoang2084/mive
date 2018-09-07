@@ -1,13 +1,34 @@
 package de.fantavier.j2ee.model;
 
+import javax.persistence.*;
+
+@Entity
+@DiscriminatorValue("EXTERN")
 public class ExternerMitarbeiter extends Employee{
 
-    private Job job;
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
 
-    public ExternerMitarbeiter(Job job, int id) {
-        this.job = job;
+    @Column(name="JOB")
+    @Basic(optional = false)
+    private Job job;
+
+    @Column(name="KENNUNG")
+    @Basic(optional = false)
+    private int kennung;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public ExternerMitarbeiter(Job job, int kennung) {
+        this.job = job;
+        this.kennung = kennung;
     }
 
     public Job getJob() {
@@ -18,11 +39,11 @@ public class ExternerMitarbeiter extends Employee{
         this.job = job;
     }
 
-    public int getId() {
-        return id;
+    public int getKennung() {
+        return kennung;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setKennung(int kennung) {
+        this.kennung = kennung;
     }
 }
