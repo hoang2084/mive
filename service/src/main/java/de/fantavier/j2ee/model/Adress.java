@@ -48,7 +48,7 @@ public class Adress implements Serializable {
     }
 
     public void setStreet(String street) {
-        street = street;
+        this.street = street;
     }
 
     public String getCity() {
