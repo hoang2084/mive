@@ -11,8 +11,8 @@ public abstract class Employee {
     private String name;
     private int age;
     private Gender gender;
-    private enum Gender {MALE, FEMALE;}
-    private String address;
+    public enum Gender {MALE, FEMALE;}
+    private Adress address;
 
     public String getName() {
         return name;
@@ -22,7 +22,7 @@ public abstract class Employee {
         return age;
     }
 
-    public String getAddress() {
+    public Adress getAddress() {
         return address;
     }
 
@@ -34,7 +34,7 @@ public abstract class Employee {
         this.age = age;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Adress address) {
         this.address = address;
     }
 

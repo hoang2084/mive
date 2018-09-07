@@ -13,7 +13,7 @@ public class Job {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    @Column(name="JOB")
+    @Column(name="JOBNAME")
     @Basic(optional = false)
     private String jobname;
 

@@ -24,6 +24,8 @@ public class InternerMitarbeiter extends Employee {
     @Basic(optional = false)
     private Abteilung abteilung;
 
+    public InternerMitarbeiter(){}
+
 
     public long getId() {
         return id;

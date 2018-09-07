@@ -13,7 +13,7 @@ public class Abteilung {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    @Column(name="ABTEILUNG")
+    @Column(name="ABTNAME")
     @Basic(optional = false)
     private String abteilungsname;
 
